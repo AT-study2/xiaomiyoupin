@@ -1,0 +1,1 @@
+"use strict";ajax({url:"/mi/homepage/main/v1002",type:"post",data:{platform:"pc"},success:function(a){a=JSON.parse(a),console.log(a)}});
