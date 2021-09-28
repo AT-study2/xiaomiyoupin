@@ -291,10 +291,6 @@ bannav.onmouseover = function (e) {
                                          <a href="" class="category-3-item items" data-id='${items.queryId}'>${items.smallImgCard.name}</a>
                                         `
                 }).join('')}
-                                       
-                
-
-
                                     </div>
                                 </div>
                             </div>

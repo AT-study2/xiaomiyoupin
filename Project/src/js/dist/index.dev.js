@@ -152,7 +152,7 @@ bannav.onmouseover = function (e) {
       subNav.innerHTML = data.map(function (item) {
         return "\n                 <div class=\"sub-nav-row\">\n                                <div class=\"sub-nav-item-row\">\n                                    <div class=\"category-2-item\">\n                                        <span class=\"name\" title=\"".concat(item.name, "\">").concat(item.name, "</span>\n                                        <i class=\"iconfont icon-next\"></i>\n                                    </div>\n                                    <div class=\"category-3-list\">\n                                    ").concat(item.children.map(function (items) {
           return "\n                                         <a href=\"\" class=\"category-3-item items\" data-id='".concat(items.queryId, "'>").concat(items.smallImgCard.name, "</a>\n                                        ");
-        }).join(''), "\n                                       \n                \n\n\n                                    </div>\n                                </div>\n                            </div>\n                \n                ");
+        }).join(''), "\n                                    </div>\n                                </div>\n                            </div>\n                \n                ");
       }).join('');
       return;
     }
