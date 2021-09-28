@@ -138,7 +138,7 @@ bannav.onmouseover = function (e) {
       catId: id
     }];
     var jsonString = JSON.stringify(dataString);
-    var localname = e.target.innerHTML;
+    var localname = e.target.innerHTML; //第一次请求把数据存入本地存储，防止后面重复请求接口
 
     if (localStorage.getItem(localname) != null) {
       var res = localStorage.getItem(localname);

@@ -267,6 +267,7 @@ bannav.onmouseover = function (e) {
         let dataString = [{}, { catId: id }];
         var jsonString = JSON.stringify(dataString);
         let localname = e.target.innerHTML
+        //第一次请求把数据存入本地存储，防止后面重复请求接口
         if (localStorage.getItem(localname) != null) {
             let res = localStorage.getItem(localname) 
             res = JSON.parse(res)
