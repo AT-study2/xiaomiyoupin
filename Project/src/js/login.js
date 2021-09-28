@@ -1,32 +1,29 @@
-// $('.logn').click(function (e) {
-//     e.preventDefault();
-//     $.ajax({
-//         url: '/api/login.php',
-//         type: "post",
-//         data: {
-//             username: $('#username').val(),
-//             password: $('#password').val(),
+// 
+$('.logn').click(function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: '/api/login.php',
+        type: "post",
+        data: {
+            username: $('#username').val(),
+            password: $('#pass').val(),
+        },
+        dataType: 'json',
+        success(res) {
+            let username = $('#username').val()
+            document.cookie = `username=${username};path='/';`
+            alert(res.msg)
+            window.location.href = './index.html';
+        },
+        error(res) {
+            alert(`${res.responseText}`)
 
-//         },
-//         // dataType: 'json',
-//         success(res) {
-//             console.log('success')
-//             // console.log('addtest')
+            window.location.href = location.href;
 
+        }
 
-//             alert('登录成功')
-//             // console.log(res)
+    })
+})
 
-//         },
-//         error(res) {
-//             console.log('error')
-//             console.log(`${res.responseText}`)
-//             // alert(`${res.responseText}`)
-//             // window.location.href = location.href;
-
-//         }
-
-//     })
-// })
 
 

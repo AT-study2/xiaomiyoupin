@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/ajax.js"></script>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="../jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../swiper-master/swiper-bundle.min.css">
+    <script src="../js/utils.js"></script>
+</head>
+
+<body>
+    <div class="mi">
+        <div class="header">
+            <div class="header-top">
+                <div class="connertain">
+                    <div class="main">
+                        <!-- 当判断是否登录， -->
+                        <ul class="ul-1">
+                            <li class="act">
+                                <!-- <span>欢迎你，亲爱的张三</span>
+                               
+                                <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2F2021%2Fedpic%2F84%2F02%2F8d%2F84028d1d4d86a2b2fa3d5675a1acbdf9_1.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635227741&t=bd82c46bcf94ae1b7afa8b8fe782926d" alt="">
+                                <span class="lognout">退出登录</span> -->
+                                <a href="./login.html">登录</a>
+                                <a href="./regist.html">注册</a>
+                                <span>|</span>
+                            </li>
+
+                            <li>帮助中心
+                                <span>|</span>
+                            </li>
+                            <li><i class="iconfont icon-zdgli"></i>下载APP
+                                <span>|</span>
+                            </li>
+
+                            <li class="post">资质证照 / 协议规则 <i class="iconfont icon-xla"></i>
+                                <div class="postActive">
+                                    <p>资质证照</p>
+                                    <p>协议规则</p>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-nav-top">
+                <div class="connertain">
+
+                    <div class="nav-first">
+                        <a href="">
+                            <img src="https://www.xiaomiyoupin.com/static3/media/logo@2x.30cd8c00.png" alt="">
+                        </a>
+                    </div>
+                    <div class="nav-three"><span>限时抢购</span><span>企业采购</span></div>
+                    <div class="nav-four">
+                        <a class="iconfont icon-jycxun " href="javascript:;"></a>
+                        <input type="text" value="" placeholder="搜一搜">
+                    </div>
+                    <div class="nav-five"><i class="iconfont icon-31gouwuche"></i></div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- 导航栏 -->
+        <div class="nav-right-fix">
+            <ul>
+                <li>
+                    <i class="iconfont icon-erji"></i>
+                    <p>联系客服</p>
+                    <div class="fixed-wx-pop">
+                        <div class="pop-inner">
+                            <p class="info-title">小米有品平台问题，建议反馈，商户和物流问题投诉等请拨打 小米有品客服热线</p>
+                            <p class="info-phone">400-100-1199</p>
+                            <p class="info-day">(周一至周日 8：00-22：00)</p>
+                            <p class="info-des">小米/米家自营品牌，手机电视智能硬件商品或订单发货/退款售后问题 请拨打小米自营客服热线</p>
+                            <p class="info-phone">400-100-5678</p>
+                            <p class="info-day">(周一至周日 8：00-18：00)</p>
+                        </div><a class="m-icons m-icons-arrow-right " data-src="" href="#!"></a>
+                    </div>
+                </li>
+                <li>
+                    <i class="iconfont icon-31saoma"></i>
+                    <p>下载APP</p>
+                    <div class="fixed-wx-pop ">
+                        <div class="pop-inner"><img class="qr-code"
+                                src="https://www.xiaomiyoupin.com/static3/media/wx_code.08890cf0.png" alt="qr-code">
+                            <p class="site-info">下载小米有品APP<br>得新人礼包</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="iconfont icon-liwulipin"></i>
+                    <p>新人有礼</p>
+                    <div class="fixed-wx-pop ">
+                        <div class="pop-inner">
+                            <div class="gift-bg"></div><img class="qr-code"
+                                src="https://www.xiaomiyoupin.com/static3/media/wx_code.08890cf0.png" alt="qr-code">
+                            <p class="site-info">立即扫码下载·小米有品 APP</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="iconfont icon-weixin"></i>
+                    <p>关注微信</p>
+                    <div class="fixed-wx-pop ">
+                        <div class="pop-inner">
+                            <img class="qr-code" src="https://www.xiaomiyoupin.com/static3/media/wx_code.08890cf0.png">
+                            <p class="site-info">扫码关注「小米有品」微信服务号，签到积分赢大奖</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="gettop">
+                    <i class="iconfont icon-huojian "></i>
+
+                    <p>回到顶部</p>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 正文区 -->
+        <div class="content">
+            <div class="content-one">
+                <div class="content-one-left">
+                    <!-- <div class="big"></div> -->
+                    <div class="swiper-container gallery-top">
+                        <div class="swiper-wrapper">
+                            <!-- <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/25fff73aa34350e69edd05164154ec70.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/f9007bd106dd7d6aa7a0957095d4ef67.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/191f45a9b5264805380dac3d82033aa7.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/03f7a7c832a920a02fb46fba1190155e.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/47af4c2d31a939a74a866138d30a089f.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/b87dc033f47faf41ed35c503e358e1c1.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div> -->
+
+                        </div>
+
+                    </div>
+                    <div class="swiper-container gallery-thumbs">
+                        <div class="swiper-wrapper swiper2">
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/25fff73aa34350e69edd05164154ec70.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/f9007bd106dd7d6aa7a0957095d4ef67.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/191f45a9b5264805380dac3d82033aa7.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/03f7a7c832a920a02fb46fba1190155e.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/47af4c2d31a939a74a866138d30a089f.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+                            <div class="swiper-slide"
+                                style="background-image:url(https://img.youpin.mi-img.com/shopmain/b87dc033f47faf41ed35c503e358e1c1.jpg@base@tag=imgScale&F=webp&h=166&w=166)">
+                            </div>
+
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next swiper-button-white swiper-button"></div>
+                        <div class="swiper-button-prev swiper-button-white swiper-button"></div>
+                    </div>
+
+                </div>
+                <div class="content-one-right">
+                    <div class="name">
+                        greenworks 8V锂电电磨套装 套装 灰紫色
+                    </div>
+                    <div class="service-price">
+                        <div class="price">
+                            <div class="title">售价</div>
+                            ￥<span>179</span>
+                        </div>
+                        <div class="service">
+                            <div class="title">服务</div>
+                            <div class="servicelist">
+                                <span><i class="iconfont icon-tongguo"></i>
+                                    包邮</span>
+                                <span><i class="iconfont icon-tongguo"></i>
+                                    三方店铺</span>
+                                <span><i class="iconfont icon-tongguo"></i>
+                                    不支持七天无理由</span>
+                                </br>
+                                <span><i class="iconfont icon-tongguo"></i>
+                                    由深圳市四季发展实业有限公司发货并提供售后
+                                    <a href="">(查看商家资质)</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wuliu">
+                        <div class="title">物流</div>
+                        <div class="ptime">预计2021年11月04日前发货</div>
+                    </div>
+                    <div class="color">
+                        <div class="title">颜色</div>
+                        <span class="">黑色</span>
+                    </div>
+
+                    <div class="num">
+                        <div class="title">数量</div>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn del btn-light" disabled>-</button>
+                            <button type="button" class="btn number btn-lg">1</button>
+                            <button type="button" class="btn add btn-light">+</button>
+                        </div>
+                    </div>
+                    <div class="btn-group buttons" role="group" aria-label="Basic example">
+                        <button type="button" class="btn  btn1">加入购物车</button>
+                        <button type="button" class="btn btn2">立即抢购</button>
+                        <button type="button" class="btn btn2 btn3"><i class="iconfont icon-shoucang"></i>
+                            收藏</button>
+                        <button type="button" class="btn btn2 btn3"><i class="iconfont icon-erji">
+
+                            </i>
+                            客服</button>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="content-two">
+                <div class="content-two-left">
+                    <ul class="content-two-left-nav">
+                        <li class="active">
+                            <i>商品详情</i></li><span>
+                        </span>
+                        <li><i>常见问题</i></li>
+                    </ul>
+                    <div class="content-two-left-content">
+                        <div class="content-two-left-details" style="display: block;">
+                            <!-- <img src="" alt="">
+                        <video src=""></video> -->
+
+
+                        </div>
+                        <div class="content-two-left-question" style="display: none;">
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="content-two-right">
+                    <div class="content-two-right-title">
+                        <img src="https://iconfont.alicdn.com/t/44387c78-f3c7-45f4-8265-fe702c7e9fb3.png" alt="">
+                        <span>商家店铺名称</span>
+                        <button>进入</button>
+
+                    </div>
+                    <div class="reconmendlist">
+                        <div class="reconmenttitle">
+                            —<span>相关推荐</span>—
+                        </div>
+                        <ul>
+                            <!-- <li>
+                                <div class="img-top">
+                                    <img src="https://img.youpin.mi-img.com/shopmain/37047a3192d80e9060ce59c65b2d1133.png@base@tag=imgScale&F=webp&h=800&w=800?w=800&h=800"
+                                        alt="">
+                                    <p>可配度数，近视老花，双重防护...</p>
+                            
+                                </div>
+                                <div class="detail">
+                                    <div class="shoptitle">睿米无线吸尘器F8</div>
+                                    <p class="price"><span>￥</span><span class="newprice">899</span></p>
+                            
+                                </div>
+                            
+                            </li> -->
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- 版权和解释权 -->
+            <div class="floot">
+                <div class="connertain">
+
+                    <div class="floot-connt">
+                        <div class="floot-first">
+                            <a href="">
+                                <img src="https://www.xiaomiyoupin.com/static3/media/logo@2x.30cd8c00.png" alt="">
+                            </a>
+                        </div>
+                        <div class="floot-second">
+                            <p>©xiaomiyoupin.com 苏B2-20180351 苏ICP备18025642号-1<img
+                                    src="https://www.xiaomiyoupin.com/static3/media/record-icon.0c577066.png"></img>苏公网安备
+                                32010502010244号</p>
+                            <p>企业名称：有品信息科技有限公司<span>关于我们</span><span>入驻有品</span> </p>
+                            <p>小米有品平台运营主体变更公告</p>
+                            <p>南京市建邺区白龙江东街8号3栋9层</p>
+
+                        </div>
+                        <div class="floot-third">
+                            <img src="	https://www.xiaomiyoupin.com/static3/media/f-logo.76889756.png" alt=""
+                                class="cx">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            crossorigin="anonymous"></script>
+        <script src="../swiper-master/swiper-bundle.min.js"></script>
+       
+        <script src="../js/details.js"></script>
+
+
+</body>
+
+</html>

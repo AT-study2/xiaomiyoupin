@@ -4,16 +4,21 @@ body {
 }
 
 .mi-login {
-  display: flex;
   height: 100%;
 }
 .mi-login .mi-login-left {
-  flex-shrink: 0;
+  float: left;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
   width: 375px;
   background-image: url("https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/banner.4994397e.jpg");
   background-size: cover;
 }
 .mi-login .mi-login-right {
+  padding-left: 375px;
+  float: right;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -204,6 +209,15 @@ body {
   text-decoration: none;
 }
 
+.form li input {
+  position: relative;
+}
+.form li em {
+  position: absolute;
+  bottom: -25px;
+  font-size: 12px;
+  color: red;
+}
 .form .code {
   display: flex;
   justify-content: space-between;
@@ -216,13 +230,30 @@ body {
   height: 100%;
   background-color: rgba(255, 102, 0, 0.123);
   padding-left: 5px;
+  position: relative;
+}
+.form .code em {
+  position: absolute;
+  bottom: 280px;
+  font-size: 12px;
+  color: red;
 }
 .form .text {
   color: #999;
+  margin-bottom: 0;
 }
 .form .text a {
   text-decoration: none;
   color: black;
+}
+.form .text input {
+  position: relative;
+}
+.form .text em {
+  position: absolute;
+  bottom: 125px;
+  font-size: 12px;
+  color: red;
 }
 
 /*# sourceMappingURL=regist.css.map */

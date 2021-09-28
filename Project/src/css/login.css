@@ -4,16 +4,21 @@ body {
 }
 
 .mi-login {
-  display: flex;
   height: 100%;
 }
 .mi-login .mi-login-left {
-  flex-shrink: 0;
+  float: left;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
   width: 375px;
   background-image: url("https://cdn.web-global.fds.api.mi-img.com/mcfe--mi-account/static/static/media/banner.4994397e.jpg");
   background-size: cover;
 }
 .mi-login .mi-login-right {
+  padding-left: 375px;
+  float: right;
   width: 100%;
   display: flex;
   flex-direction: column;

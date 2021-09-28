@@ -59,6 +59,10 @@ function validation() {
     return gulp.src("./src/validation/**").pipe(gulp.dest("./dist/validation"));
 }
 exports.validation = validation
+function swiper() {
+    return gulp.src("./src/swiper-master/**").pipe(gulp.dest("./dist/swiper-master"));
+}
+exports.swiper = swiper
 
 
 //清楚缓存(清空)
@@ -92,7 +96,7 @@ function web() {
 exports.web = web;
 exports.builds = gulp.series(
     clear,
-    gulp.parallel(css, js, html,iconfont,jquery,validation),
+    gulp.parallel(css, js, html,iconfont,jquery,validation,swiper),
     web,
     watch
 );

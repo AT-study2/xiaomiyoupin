@@ -14,9 +14,10 @@
    
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <script src="../jquery/jquery.min.js"></script>
-    <script src="../validation/dist/jquery.validate.min.js"></script>
-    <script src="../validation/dist/additional-methods.min.js"></script>
     <script src="../js/gverify.js"></script>
+    <script src="../validation/dist/jquery.validate.min.js"></script>
+    <script src="../validation/dist/localization/messages_zh.min.js"></script>
+  
     <style>
           #picyzm {
             width: 100px;
@@ -82,17 +83,12 @@
                 <div class="login">
                     <div class="ma">
                         <div class="aa"><i class="iconfont icon-ico"></i></div>
-                      
-                       
-
                     </div>
                     <div class="saoma">
                         <div class="tip">
                             扫码注册
                         </div>
                     </div>
-
-
                     <div class="nav">
                         <div ><a href="./login.html">登录</a></div>
                         <div class="active"><a href="./regist.html">注册</a></div>
@@ -100,37 +96,35 @@
                     <form action="" class="form">
                         <ul>
                             <li>
-                            
-                                <input type="text" id="username" name="username" required>
+                         
+                                <input type="text" id="username" class="form-control"  name="username" required>
                                 <label for="username">用户名</label>
                             
                             </li>
                             
                             <li>
                                
-                                <input type="text" id="phone" name="phone" required>
+                                <input type="text" id="phone" class="form-control"name="phone" required>
                                 <label for="phone">手机号码</label>
                                 
                             </li>
                             <li>
                                 
-                                <input type="password" id="pass" name="password" required>
+                                <input type="password" id="pass" class="form-control"name="password" required>
                                 <label for="pass">密码</label>
                             </li>
                             <div class="code">
+                                <!-- <input class="form-check-input inp1" type="checkbox" value="" id="invalidCheck"  name="checkCode"  placeholder="请输入验证码" required> -->
                                
-                                <input id="checkCode" name="checkCode" type="text" class="inp1" placeholder="请输入验证码">
+                                <input id="checkCode" name="checkCode" type="text" class="inp1" placeholder="请输入验证码" required>
                                 <p id="picyzm"></p>
-
-                                <!-- <label for="" class="n"></label> -->
-                                <!-- <input type="text" class="btn" value="获取验证码" readonly> -->
-                                <!-- <button class="btn">获取验证码</button> -->
                             </div>
                             <li>
                                 <button class="logn">注册</button>
                             </li>
                             <p class="text">
-                                <input class="b" type="checkbox" name="checkbox">
+                                <input class="form-check-input b" type="checkbox" value="" id="invalidCheck" name="checkbox" placeholder="请输入验证码"
+                                    required>
                                 <span>
                                     阅读并接受小米账号
                                     <a href="">《小用户协议》</a>及<a href="">《隐私政策》</a>
@@ -142,7 +136,7 @@
                             <div class="anotherLogo">
                                 <i class="iconfont icon-zhifubao" style="color: blue;"></i>
                                 <i class="iconfont icon-weixin" style="color: green;"></i>
-                                <i class="iconfont icon-QQ1" style="color: blue;"></i>
+                                <i class="iconfont icon-QQ-circle-fill" style="color: blue;"></i>
                                 <i class="iconfont icon-weibo" style="color: red;"></i>
                                 
                             </div>

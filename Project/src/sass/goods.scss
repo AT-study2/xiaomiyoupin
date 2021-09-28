@@ -1,0 +1,92 @@
+.mi {
+
+
+    .content {
+        width: 100%;
+
+        .all {
+            background-color: #f2f2f2;
+            width: 100%;
+
+            .connertain {
+                width: 1080px;
+                margin: auto;
+                padding-top: 30px;
+                padding-bottom: 100px;
+
+                .querynum {
+                    font-size: 14px;
+
+                    span {
+                        color: #845f3f;
+                        ;
+                    }
+                }
+
+                .goodslist {
+                    display: flex;
+                    // justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    margin-top: 10px;
+                     .goods:hover {
+                         margin-left: 0px;
+                         margin-top: 1px;
+                         box-shadow: 2px 2px 15px 0px #ccc;
+                     }
+
+                    .goods {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #fff;
+                        width: 266px;
+                        height: 267px;
+                        margin-bottom: 5px;
+                        margin-right: 3px;
+
+                        img {
+                            width: 195px;
+                            height: 195px;
+                        }
+                        .goods-detail{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            .name{
+                                color: #333;
+                                font-size: 16px;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                width: 266px;
+                                text-align: center;
+
+                            }
+                            .price{
+                                font-size: 12px;
+                                color: #A91221;
+                                span{
+                                    font-size: 14px;
+                                }
+                                .tip{
+                                   
+                                    height: 20px;
+                                    padding: 0 6px;
+                                    margin-left: 5px;
+                                
+                                    color: #fff;
+                                    background-color: #c00000;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

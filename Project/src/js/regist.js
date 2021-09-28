@@ -18,26 +18,44 @@ jQuery.validator.addMethod('passwordTest',
     },
     '密码必须至少包含字母、数字及标点符号中的2种'
 )
+jQuery.validator.addMethod(
+    "userTest",
+    function (value) {
+        let reg = /^([\u4e00-\u9fa5]{1,7}|[a-z]{1,14})$/;
+        if (reg.test(value)) {
+            return true;
+        }
+        return false;
+    },
+    '最长14个英文或7个汉字'
+)
+jQuery.validator.addMethod(
+    "yzmTest",
+    function (value) {
+        let res = verifyCode.validate(value);
+        if (res) {
+            return true;
+        }
+        return false;
+    },
+    '验证码不匹配'
+)
 
-$('#form').validate({
+$('.form').validate({
     rules: {
+        username: {
+            userTest: true,
+        },
         phone: {
-            required: true,
             phoneTest: true
         },
         password: {
-            required: true,
             passwordTest: true,
             rangelength: [8, 14]
         },
         checkCode: {
-            required: true,
-            equalTo: '.inp1'
+            yzmTest: true,
         },
-        checkbox: {
-            required: true
-        }
-
 
     },
     messages: {
@@ -52,7 +70,7 @@ $('#form').validate({
         },
         checkCode: {
             required: '请输入验证码',
-            equalTo: '验证不正确'
+           
         },
         checkbox: {
             required: '请勾选',
@@ -65,31 +83,31 @@ $('#form').validate({
     submitHandler: function (form) {
         // console.log($('#username').val(), $('#password').val())
 
-        alert("提交事件!");
-        // $.ajax({
-        //     url: '/api/regist.php',
-        //     type: "post",
-        //     data: {
-        //         username: $('#username').val(),
-        //         password: $('#password').val(),
-        //         tel: $('#phone').val()
-        //     },
-        //     dataType: 'json',
-        //     success(res) {
-        //         console.log(res)
-        //         alert(`${res.msg}`)
-        //         window.location.href = './login.html';
+        // alert("提交事件!");
+        $.ajax({
+            url: '/api/regist.php',
+            type: "post",
+            data: {
+                username: $('#username').val(),
+                password: $('#pass').val(),
+                tel: $('#phone').val()
+            },
+            dataType: 'json',
+            success(res) {
+                // console.log(res)
+                alert(`${res.msg}`)
+                window.location.href = './login.html';
 
-        //     },
-        //     error(res) {
-        //         console.log(res)
-        //         alert(`${res.responseText}`)
-        //         window.location.href = location.href;
+            },
+            error(res) {
+                // console.log(res)
+                alert(`${res.responseText}`)
+                window.location.href = location.href;
 
-        //     }
-        // }
+            }
+        }
 
-        // );
+        );
     },
 }
 
@@ -100,4 +118,32 @@ let verifyCode = new GVerify({
     id: "picyzm",
     length: 6
 });
+
+// $(function () {
+//     $('.form').bootstrapValidator({
+//         message: 'This value is not valid',
+//         feedbackIcons: {
+//             valid: 'glyphicon glyphicon-ok',
+//             invalid: 'glyphicon glyphicon-remove',
+//             validating: 'glyphicon glyphicon-refresh'
+//         },
+//         fields: {
+//             username: {
+//                 message: '用户名验证失败',
+//                 validators: {
+//                     notEmpty: {
+//                         message: '用户名不能为空'
+//                     }
+//                 }
+//             },
+//             phone: {
+//                 validators: {
+//                     notEmpty: {
+//                         message: '电话不能为空'
+//                     }
+//                 }
+//             }
+//         }
+//     });
+// });
 
