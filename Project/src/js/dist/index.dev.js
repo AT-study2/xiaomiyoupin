@@ -138,10 +138,30 @@ bannav.onmouseover = function (e) {
       catId: id
     }];
     var jsonString = JSON.stringify(dataString);
+    var localname = e.target.innerHTML;
+
+    if (localStorage.getItem(localname) != null) {
+      var res = localStorage.getItem(localname);
+      res = JSON.parse(res);
+      var data = res.children; //标题
+
+      var cateName = document.querySelector('.cate-name');
+      cateName.innerHTML = res.name; //内容
+
+      var subNav = document.querySelector('.sublist');
+      subNav.innerHTML = data.map(function (item) {
+        return "\n                 <div class=\"sub-nav-row\">\n                                <div class=\"sub-nav-item-row\">\n                                    <div class=\"category-2-item\">\n                                        <span class=\"name\" title=\"".concat(item.name, "\">").concat(item.name, "</span>\n                                        <i class=\"iconfont icon-next\"></i>\n                                    </div>\n                                    <div class=\"category-3-list\">\n                                    ").concat(item.children.map(function (items) {
+          return "\n                                         <a href=\"\" class=\"category-3-item items\" data-id='".concat(items.queryId, "'>").concat(items.smallImgCard.name, "</a>\n                                        ");
+        }).join(''), "\n                                       \n                \n\n\n                                    </div>\n                                </div>\n                            </div>\n                \n                ");
+      }).join('');
+      return;
+    }
+
     var ps = navp(jsonString);
     ps.then(function (res) {
       res = JSON.parse(res);
-      var data = res.data.children; //标题
+      var data = res.data.children; // console.log(res)
+      //标题
 
       var cateName = document.querySelector('.cate-name');
       cateName.innerHTML = res.data.name; //内容
@@ -151,11 +171,13 @@ bannav.onmouseover = function (e) {
         return "\n                 <div class=\"sub-nav-row\">\n                                <div class=\"sub-nav-item-row\">\n                                    <div class=\"category-2-item\">\n                                        <span class=\"name\" title=\"".concat(item.name, "\">").concat(item.name, "</span>\n                                        <i class=\"iconfont icon-next\"></i>\n                                    </div>\n                                    <div class=\"category-3-list\">\n                                    ").concat(item.children.map(function (items) {
           return "\n                                         <a href=\"\" class=\"category-3-item items\" data-id='".concat(items.queryId, "'>").concat(items.smallImgCard.name, "</a>\n                                        ");
         }).join(''), "\n                                       \n                \n\n\n                                    </div>\n                                </div>\n                            </div>\n                \n                ");
-      }).join('');
+      }).join(''); //数据存储
+
+      localStorage.setItem(res.data.name, JSON.stringify(res.data));
     });
   }
 
-  nav.onmousemove = function (e) {
+  nav.onmousemove = function () {
     nav.classList.add('show'); //跳转商品类别查询页面
 
     nav.onclick = function (e) {

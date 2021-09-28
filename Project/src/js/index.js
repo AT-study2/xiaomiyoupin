@@ -134,10 +134,10 @@ p2.then((res) => {
         }
         let id = item.gid
         // console.log(datas)
-        
+
         localStorage.setItem(id, JSON.stringify(datas))
     })
-   
+
 
 
 
@@ -166,7 +166,7 @@ p3.then((res) => {
                         </div>`
 
     }).join('')
-    
+
     //数据存储
     data.forEach(function (item) {
         let datas = {
@@ -266,10 +266,47 @@ bannav.onmouseover = function (e) {
         let id = e.target.getAttribute('data-idx')
         let dataString = [{}, { catId: id }];
         var jsonString = JSON.stringify(dataString);
+        let localname = e.target.innerHTML
+        if (localStorage.getItem(localname) != null) {
+            let res = localStorage.getItem(localname) 
+            res = JSON.parse(res)
+            let data = res.children
+            //标题
+            let cateName = document.querySelector('.cate-name')
+            cateName.innerHTML = res.name
+            //内容
+            let subNav = document.querySelector('.sublist')
+            subNav.innerHTML = data.map((item) => {
+                return `
+                 <div class="sub-nav-row">
+                                <div class="sub-nav-item-row">
+                                    <div class="category-2-item">
+                                        <span class="name" title="${item.name}">${item.name}</span>
+                                        <i class="iconfont icon-next"></i>
+                                    </div>
+                                    <div class="category-3-list">
+                                    ${item.children.map((items) => {
+                    return `
+                                         <a href="" class="category-3-item items" data-id='${items.queryId}'>${items.smallImgCard.name}</a>
+                                        `
+                }).join('')}
+                                       
+                
+
+
+                                    </div>
+                                </div>
+                            </div>
+                
+                `
+            }).join('')
+            return
+        }
         let ps = navp(jsonString)
         ps.then((res) => {
             res = JSON.parse(res)
             let data = res.data.children
+            // console.log(res)
             //标题
             let cateName = document.querySelector('.cate-name')
             cateName.innerHTML = res.data.name
@@ -299,10 +336,12 @@ bannav.onmouseover = function (e) {
                 
                 `
             }).join('')
+            //数据存储
+            localStorage.setItem(res.data.name, JSON.stringify(res.data))
 
         })
     }
-    nav.onmousemove = function (e) {
+    nav.onmousemove = function () {
 
         nav.classList.add('show')
         //跳转商品类别查询页面

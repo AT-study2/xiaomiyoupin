@@ -68,12 +68,35 @@ function p(id) {
     var data = res[2].data.recommendResponseList; // console.log(data)
 
     ullist.innerHTML = data.map(function (item) {
-      return "\n            <li>\n                                <div class=\"img-top\">\n                                    <img src=".concat(item.data.goods.img800, "\n                                        alt=\"\">\n                                    <p>").concat(item.data.goods.summary, "</p>\n\n                                </div>\n                                <div class=\"detail\">\n                                    <div class=\"shoptitle\">").concat(item.data.goods.name, "</div>\n                                    <p class=\"price\"><span>\uFFE5</span><span class=\"newprice\">").concat(item.data.goods.marketPrice / 100, "</span></p>\n\n                                </div>\n\n                            </li>\n            \n            ");
-    }).join('');
+      return "\n            <li>\n                                <div class=\"img-top\" data-id=".concat(item.data.goods.gid, ">\n                                    <img src=").concat(item.data.goods.img800, "\n                                        alt=\"\" data-id=").concat(item.data.goods.gid, ">\n                                    <p>").concat(item.data.goods.summary, "</p>\n\n                                </div>\n                                <div class=\"detail\" data-id=").concat(item.data.goods.gid, ">\n                                    <div class=\"shoptitle\">").concat(item.data.goods.name, "</div>\n                                    <p class=\"price\"><span>\uFFE5</span><span class=\"newprice\">").concat(item.data.goods.marketPrice / 100, "</span></p>\n\n                                </div>\n\n                            </li>\n            \n            ");
+    }).join(''); //数据存储
+
+    data.forEach(function (item) {
+      var datas = {
+        name: item.data.goods.name,
+        price: item.data.goods.marketPrice
+      };
+      var id = item.data.goods.gid; // console.log(datas)
+
+      localStorage.setItem(id, JSON.stringify(datas));
+    });
   };
 }
 
-var recommend = p(idIndex * 1); //读取本地存储 渲染标题与价格
+var recommend = p(idIndex * 1); //点击推荐的商品跳转至推荐商品页面
+
+var content = document.querySelector('.reconmendlist');
+
+content.onclick = function (e) {
+  var e = e || e.event;
+
+  if (e.target.getAttribute('data-id')) {
+    var _id = e.target.getAttribute('data-id');
+
+    location.href = '../html/details.html?id=' + _id;
+  }
+}; //读取本地存储 渲染标题与价格
+
 
 var Contentname = document.querySelector('.name');
 var Contentprice = document.querySelector('.price span');

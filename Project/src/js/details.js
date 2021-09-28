@@ -89,13 +89,13 @@ function p(id) {
         ullist.innerHTML = data.map(item => {
             return `
             <li>
-                                <div class="img-top">
+                                <div class="img-top" data-id=${item.data.goods.gid}>
                                     <img src=${item.data.goods.img800}
-                                        alt="">
+                                        alt="" data-id=${item.data.goods.gid}>
                                     <p>${item.data.goods.summary}</p>
 
                                 </div>
-                                <div class="detail">
+                                <div class="detail" data-id=${item.data.goods.gid}>
                                     <div class="shoptitle">${item.data.goods.name}</div>
                                     <p class="price"><span>￥</span><span class="newprice">${item.data.goods.marketPrice / 100}</span></p>
 
@@ -106,11 +106,32 @@ function p(id) {
             `
 
         }).join('')
+        //数据存储
+        data.forEach(function (item) {
+            let datas = {
+                name: item.data.goods.name,
+                price: item.data.goods.marketPrice
+            }
+            let id = item.data.goods.gid
+            // console.log(datas)
+
+            localStorage.setItem(id, JSON.stringify(datas))
+        })
     };
 }
 let recommend = p(idIndex * 1)
 
+//点击推荐的商品跳转至推荐商品页面
+let content = document.querySelector('.reconmendlist')
 
+content.onclick = (e) => {
+
+    var e = e || e.event
+    if (e.target.getAttribute('data-id')) {
+        let id = e.target.getAttribute('data-id')
+        location.href = '../html/details.html?id=' + id
+    }
+}
 
 
 //读取本地存储 渲染标题与价格
