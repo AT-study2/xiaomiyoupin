@@ -24,6 +24,15 @@ $('.logn').click(function (e) {
 
     })
 })
+// 
+$(".ma").hover(
+    function () {
+        $(".saoma").slideToggle();
+
+    }
+);
+
+
 
 
 

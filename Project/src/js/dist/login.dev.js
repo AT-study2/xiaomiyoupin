@@ -22,4 +22,8 @@ $('.logn').click(function (e) {
       window.location.href = location.href;
     }
   });
+}); // 
+
+$(".ma").hover(function () {
+  $(".saoma").slideToggle();
 });

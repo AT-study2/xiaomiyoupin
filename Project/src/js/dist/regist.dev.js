@@ -99,30 +99,4 @@ $('.form').validate({
 var verifyCode = new GVerify({
   id: "picyzm",
   length: 6
-}); // $(function () {
-//     $('.form').bootstrapValidator({
-//         message: 'This value is not valid',
-//         feedbackIcons: {
-//             valid: 'glyphicon glyphicon-ok',
-//             invalid: 'glyphicon glyphicon-remove',
-//             validating: 'glyphicon glyphicon-refresh'
-//         },
-//         fields: {
-//             username: {
-//                 message: '用户名验证失败',
-//                 validators: {
-//                     notEmpty: {
-//                         message: '用户名不能为空'
-//                     }
-//                 }
-//             },
-//             phone: {
-//                 validators: {
-//                     notEmpty: {
-//                         message: '电话不能为空'
-//                     }
-//                 }
-//             }
-//         }
-//     });
-// });
+});
