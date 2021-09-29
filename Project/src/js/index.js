@@ -5,7 +5,6 @@ let p1 = p()
 p1.then((res) => {
     res = JSON.parse(res)
     let data = res.data.homepage.floors[3].data.items
-    // console.log(data)
     ul1.innerHTML = data.map(function (item, index) {
         return index == 0 ? `<li data-id=${item.gid}>
             <div data-id=${item.gid} class="se-cont cont1">
@@ -23,9 +22,9 @@ p1.then((res) => {
                 <p><span class="num">${item.saled_count}</span>
                     <span>人支持</span>
                     ${item.tags ?
-                `${item.tags.forEach(function (items) {
-                    `<span class="hot">${items.name}</span>`
-                })}` : ''}
+                `<span class="hot" style='background: ${item.tags[0].color}'> ${item.tags[0].name}</span>`
+                : ''
+        }
                    
                 </p>
 
