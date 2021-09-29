@@ -110,7 +110,8 @@ function p(id) {
         data.forEach(function (item) {
             let datas = {
                 name: item.data.goods.name,
-                price: item.data.goods.marketPrice
+                price: item.data.goods.marketPrice,
+                imgsrc: item.data.goods.imgSquare
             }
             let id = item.data.goods.gid
             // console.log(datas)
@@ -302,10 +303,60 @@ for (var i = 0; i < li.length; i++) {
         }
         this.className = 'active';
         div[this.index].style.display = 'block';
-        scrollTo({top:500,behavior:'smooth'})
+        scrollTo({ top: 500, behavior: 'smooth' })
 
 
     }
+}
+
+//跳转购物车
+let cart = document.querySelector('.cart')
+cart.onclick = (e) => {
+    var e = e || window.event;
+    e.preventDefault();
+    //判断登录
+    if (!document.cookie) {
+        localStorage.setItem('url', location.href);
+        document.location.href = '../html/login.html'
+        return
+
+    } else {
+        document.location.href = '../html/cart.html'
+    }
+}
+//加入购物车
+let btn1 = document.querySelector('.btn1')
+let cookie1 = document.cookie;
+cookie1 = cookie1.substr(cookie1.indexOf('=') + 1)
+btn1.onclick = (e) => {
+
+    if (!document.cookie) {
+        localStorage.setItem('url', location.href);
+        document.location.href = './login.html'
+        return
+
+    } else {
+        let num = document.querySelector('.number')
+        num = num.innerHTML*1
+        console.log(num)
+        ajax({
+            url: '/api/addCarData.php',
+            type: 'post',
+            data: { username: cookie1, goods_id: idIndex, goods_num: num },
+            success: function (res) {
+                // console.log(res)
+                res = JSON.parse(res)
+                let r = res.code ? confirm('添加成功是否要到购物车查看') : alert('添加失败');
+                location.href = r ? './cart.html' : '';
+
+
+
+            }
+        })
+       
+
+    }
+
 }
 
 //内容导航栏固定
@@ -319,8 +370,8 @@ window.onload = function () {
                 headerNav.classList.remove('nav-fix-active')
             case scrollY < 700:
                 Nav.classList.remove('left-nav-active')
-                 headerNav.style.width = '100%'
-               
+                headerNav.style.width = '100%'
+
                 break;
             case scrollY >= 500: headerNav.classList.add('nav-fix-active')
                 Nav.style.width = '774px'

@@ -16,7 +16,8 @@ p1.then(function (res) {
   data.forEach(function (item) {
     var datas = {
       name: item.name,
-      price: item.market_price
+      price: item.market_price,
+      imgsrc: item.pic_url
     };
     var id = item.gid; // console.log(datas)
 
@@ -58,7 +59,8 @@ p2.then(function (res) {
   data.goods.forEach(function (item) {
     var datas = {
       name: item.name,
-      price: item.flash_price
+      price: item.flash_price,
+      imgsrc: item.img
     };
     var id = item.gid; // console.log(datas)
 
@@ -78,7 +80,8 @@ p3.then(function (res) {
   data.forEach(function (item) {
     var datas = {
       name: item.name,
-      price: item.market_price
+      price: item.market_price,
+      imgsrc: item.pic_url
     };
     var id = item.gid; // console.log(datas)
 
@@ -117,7 +120,8 @@ p4.then(function (res) {
   data2.forEach(function (item) {
     var datas = {
       name: item.data.goods.name,
-      price: item.data.goods.marketPrice
+      price: item.data.goods.marketPrice,
+      imgsrc: item.data.goods.imgSquare
     };
     var id = item.data.goods.gid; // console.log(datas)
 

@@ -72,7 +72,8 @@ pps.then((res) => {
     data.forEach(function (item) {
         let datas = {
             name: item.data.goodsInfo.name,
-            price: item.data.goodsInfo.marketPrice
+            price: item.data.goodsInfo.marketPrice,
+            imgsrc: item.data.goodsInfo.imgSquare
         }
         let id = item.data.goodsInfo.gid
         // console.log(datas)

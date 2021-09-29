@@ -52,7 +52,8 @@ pps.then(function (res) {
   data.forEach(function (item) {
     var datas = {
       name: item.data.goodsInfo.name,
-      price: item.data.goodsInfo.marketPrice
+      price: item.data.goodsInfo.marketPrice,
+      imgsrc: item.data.goodsInfo.imgSquare
     };
     var id = item.data.goodsInfo.gid; // console.log(datas)
 

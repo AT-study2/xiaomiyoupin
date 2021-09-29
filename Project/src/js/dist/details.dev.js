@@ -74,7 +74,8 @@ function p(id) {
     data.forEach(function (item) {
       var datas = {
         name: item.data.goods.name,
-        price: item.data.goods.marketPrice
+        price: item.data.goods.marketPrice,
+        imgsrc: item.data.goods.imgSquare
       };
       var id = item.data.goods.gid; // console.log(datas)
 
@@ -247,7 +248,55 @@ for (var i = 0; i < li.length; i++) {
       behavior: 'smooth'
     });
   };
-} //内容导航栏固定
+} //跳转购物车
+
+
+var cart = document.querySelector('.cart');
+
+cart.onclick = function (e) {
+  var e = e || window.event;
+  e.preventDefault(); //判断登录
+
+  if (!document.cookie) {
+    localStorage.setItem('url', location.href);
+    document.location.href = '../html/login.html';
+    return;
+  } else {
+    document.location.href = '../html/cart.html';
+  }
+}; //加入购物车
+
+
+var btn1 = document.querySelector('.btn1');
+var cookie1 = document.cookie;
+cookie1 = cookie1.substr(cookie1.indexOf('=') + 1);
+
+btn1.onclick = function (e) {
+  if (!document.cookie) {
+    localStorage.setItem('url', location.href);
+    document.location.href = './login.html';
+    return;
+  } else {
+    var num = document.querySelector('.number');
+    num = num.innerHTML * 1;
+    console.log(num);
+    ajax({
+      url: '/api/addCarData.php',
+      type: 'post',
+      data: {
+        username: cookie1,
+        goods_id: idIndex,
+        goods_num: num
+      },
+      success: function success(res) {
+        // console.log(res)
+        res = JSON.parse(res);
+        var r = res.code ? confirm('添加成功是否要到购物车查看') : alert('添加失败');
+        location.href = r ? './cart.html' : '';
+      }
+    });
+  }
+}; //内容导航栏固定
 
 
 var Nav = document.querySelector('.content-two-left-nav');

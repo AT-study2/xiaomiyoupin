@@ -65,7 +65,8 @@ p1.then((res) => {
     data.forEach(function (item) {
         let datas = {
             name: item.name,
-            price: item.market_price
+            price: item.market_price,
+            imgsrc: item.pic_url
         }
         let id = item.gid
         // console.log(datas)
@@ -130,7 +131,8 @@ p2.then((res) => {
     data.goods.forEach(function (item) {
         let datas = {
             name: item.name,
-            price: item.flash_price
+            price: item.flash_price,
+            imgsrc: item.img
         }
         let id = item.gid
         // console.log(datas)
@@ -171,7 +173,8 @@ p3.then((res) => {
     data.forEach(function (item) {
         let datas = {
             name: item.name,
-            price: item.market_price
+            price: item.market_price,
+            imgsrc: item.pic_url
         }
         let id = item.gid
         // console.log(datas)
@@ -245,7 +248,8 @@ p4.then((res) => {
     data2.forEach(function (item) {
         let datas = {
             name: item.data.goods.name,
-            price: item.data.goods.marketPrice
+            price: item.data.goods.marketPrice,
+            imgsrc: item.data.goods.imgSquare
         }
         let id = item.data.goods.gid
         // console.log(datas)
