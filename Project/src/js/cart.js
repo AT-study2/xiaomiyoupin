@@ -323,7 +323,7 @@ container.onclick = function () {
 
     }
     //清空
-    if (e.target.classList.contains('btn-info')) {
+    if (e.target.classList.contains('btn-warning')) {
         ajax({
             url: '/api/clearCarData.php',
             type: 'get',
