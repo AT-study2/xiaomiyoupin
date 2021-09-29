@@ -4,7 +4,7 @@ let cookie1 = document.cookie;
 cookie1 = cookie1.substr(cookie1.indexOf('=') + 1)
 if (!cookie1) {
     localStorage.setItem("url", location.href);
-    location.href = "../page/login.html";
+    location.href = "../html/login.html";
 }
 //获取购物车数据  从数据库中获取id与数量 根据id读取本地存储数据进行渲染
 getDate()

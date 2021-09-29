@@ -117,7 +117,10 @@
 .mi .header .header-nav-top .connertain .nav-four input {
   height: 80%;
 }
-.mi .header .header-nav-top .connertain .nav-five i {
+.mi .header .header-nav-top .connertain .nav-five a {
+  text-decoration: none;
+}
+.mi .header .header-nav-top .connertain .nav-five a i {
   color: black;
   font-size: 30px;
   margin-left: 9px;
